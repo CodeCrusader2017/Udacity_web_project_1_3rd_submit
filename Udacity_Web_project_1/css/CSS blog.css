@@ -1,0 +1,108 @@
+/*Display mobile device first (dropping the header image)- but see @media below for desktop etc*/
+.container {
+  display:grid;
+  grid-template-columns: 900px;
+  grid-template-rows: 80px 130px 300px 180px;
+  grid-template-areas: 
+  "hd"
+  "feat" 
+  "main"
+  "ft";
+  border: 2px solid lightgray;
+}
+
+.header {
+  grid-area:hd;
+}
+
+#headerinfo {
+  background-image: url("./images/cssimage.jpg"); /* Photo by Svilen Milev downloaded from FreeImages.com */ 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  text-align: right;
+  background-color: cyan;
+}
+
+/*Only set h1 headers to blue colour within the #headerinfo ID box - i.e. do not set for any other h1 headers.*/
+#headerinfo > h1 {
+  color: blue;
+}
+
+.feature {
+  grid-area:feat;
+}
+
+.feature > h2 {
+  color: darkorange;
+}
+
+.content {
+  grid-area:main;
+}
+
+/*Only set h2 headers to blue colour within the .content box class - i.e. do not set for any other h2 headers.*/
+.content > h2 {
+  color: blue;
+}
+
+.footer {
+  grid-area:ft;
+}
+
+.box {
+  border: 1px solid yellowgreen;
+  background: lightcyan; 
+}
+
+a:link {
+  color: blueviolet;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: red;  
+  background-color: transparent;
+  text-decoration: none;
+}
+  
+a:hover {
+  color: pink;
+  background-color: transparent;
+  text-decoration: underline;
+}
+  
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* Set up for desktop Screens */
+@media (min-width: 900px) and (max-width:1600px) {
+#headerinfo {
+  background-image: url("./images/cssimage.jpg"); /* Photo by Svilen Milev downloaded from FreeImages.com */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  text-align: center;
+  background-color: cyan;
+  }
+}
+
+/* Set up for desktop Screens */
+@media (min-width: 900px) and (max-width:1600px) {
+.container {
+  display:grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 80px 130px 300px 180px;
+  grid-template-areas: 
+  "hd hd hd hd hd hd hd hd"
+  "feat feat feat feat feat feat feat feat" 
+  "main main main main main main main main"
+  "ft ft ft ft ft ft ft ft";
+  border: 2px solid lightgray;
+  }
+}
+  

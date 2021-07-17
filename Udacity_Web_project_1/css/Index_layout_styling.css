@@ -1,0 +1,111 @@
+/*Display mobile device first - but see @media below for desktop etc*/
+.container {
+  display:grid;
+  height: 90vh;
+  grid-template-columns: 850px;
+  grid-template-rows: 70px 1fr 1fr;
+  grid-template-areas: 
+  "hd"
+  "sd"
+  "main"
+  "ft";
+}  
+
+.box {
+  border: 1px solid yellowgreen;
+  background: rgb(211, 211, 211);
+}
+
+.header {
+  grid-area:hd;
+  background: cyan;
+  text-align: center;
+}
+
+.sidebar {
+  grid-area:sd;
+  background: lightcyan;
+}
+
+.content {
+  grid-area:main;
+  display: flex;
+  flex-direction: row;
+  justify-content: auto;
+  background-size: cover;
+  background-repeat: auto;
+  background-position: relative;
+}
+
+/*Only set h1 headers to blue colour within the .header class box - i.e. do not set for any other h1 headers.*/
+.header > h1 {
+  color: blue;
+}
+
+/*Only change h3 headers to blue that are within the 3 nestedgridblog IDs - i.e. do not change any other h3 headers */
+#nestedgridblog1 > h3 {
+  color: blue;
+  border: 3px solid blue;
+  background-color: lightblue;
+}
+
+#nestedgridblog2 > h3 {
+  color: blue;
+  border: 3px solid blue;
+  background-color: lightblue;
+}
+
+#nestedgridblog3 > h3 {
+  color: blue;
+  border: 3px solid blue;
+  background-color: lightblue;
+}
+
+.footer {
+  grid-area:ft;
+  background-color: black;
+}
+
+#footerlinks {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  list-style-position: inside;
+  color: white;
+  background-position: center;
+}
+
+/*Set all buttons to blue, background color white etc, unless overridden by a class . or ID # */
+button {
+  color: blue;
+  border: 1px solid blue;
+  background-color: white;
+} 
+
+/* Set up for desktop Screens */
+@media (min-width: 900px) and (max-width:1600px) {
+.container {
+  display:grid;
+  grid-template-columns: 110px 300px 300px;
+  grid-template-rows: 70px 470px;
+  grid-template-areas: 
+  "hd hd hd hd hd hd hd hd"
+  "sd main main main main main main main"
+  "ft ft ft ft ft ft ft ft";
+  border: 2px solid lightgray;
+  } 
+}
+
+/*Set up for display on very large screens, such as projectors*/
+@media(min-width:1601px) {
+.container {
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 100px 500px;
+  grid-template-areas: 
+  "hd hd hd hd hd hd hd hd"
+  "sd main main main main main main main"
+  "ft ft ft ft ft ft ft ft";
+  border: 2px solid lightgray;
+  } 
+}
+  
